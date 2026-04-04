@@ -1,16 +1,39 @@
-# React + Vite
+# Portafolio 3D Interactivo | Nadia Rizo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### [Ver Proyecto en Vivo](https://portafolio-3d-one.vercel.app)
 
-Currently, two official plugins are available:
+¡Bienvenido! Este es mi portafolio inmersivo desarrollado como estudiante de **Ingeniería en Sistemas de Información (UTN FRT)**. Busqué romper con el esquema del CV tradicional creando una habitación 3D interactiva.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Stack Tecnológico
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Este proyecto combina desarrollo frontend moderno con herramientas de automatización:
 
-## Expanding the ESLint configuration
+* **Frontend:** [React.js](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+* **Gráficos 3D:** [Three.js](https://threejs.org/) (usando React Three Fiber & Drei)
+* **Modelado:** blockbench (Habitación modelada y texturizada desde cero)
+* **Automatización:** [n8n](https://n8n.io/) (Webhook para procesar el formulario de contacto)
+* **Despliegue:** [Vercel](https://vercel.com/) (Frontend) & [Hugging Face](https://hugging_face.co) (n8n Server)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Características Principales
+
+* **Experiencia 3D:** Entorno navegable con cámara controlada y selección de objetos con efectos de "outline".
+* **Visualizador de CV:** Ventana estilo Windows 95 con visualización de PDF y funciones de descarga.
+* **Contacto Automatizado:** Formulario de correo integrado que envía mensajes reales a través de un flujo de n8n.
+* **Diseño Adaptativo:** Optimizado para una experiencia fluida tanto en computadoras como en dispositivos móviles.
+
+---
+
+## Estructura del Proyecto
+
+```text
+src/
+ ├── components/
+ │    ├── 3d/        # Modelos .glb, luces y ambiente
+ │    └── ui/        # Ventanas Win95, Modales y Formularios
+ ├── hooks/          # Lógica de cámara y detección de dispositivos
+ ├── data/           # Contenido de las interacciones
+ └── App.jsx         # Orquestador de la escena y estados
